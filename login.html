@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+
+<!-- BAGIAN: HEAD | Menyiapkan metadata, judul tab browser, dan stylesheet untuk halaman login. -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Explore Sumba Timur</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="login-page" data-page="login">
+  <!-- BAGIAN: LAYOUT LOGIN | login-visual menjadi area gambar; login-panel berisi identitas dan form masuk. -->
+  <main class="login-shell">
+    <section class="login-visual"></section>
+    <section class="login-panel">
+      <img src="/assets/logo/logo_final.png.png" alt="Explore Sumba Timur">
+      <h1>Selamat Datang Kembali</h1>
+      <p>Senang melihatmu lagi! Masuk untuk melanjutkan petualanganmu di Sumba Timur</p>
+      <!-- BAGIAN: FORM LOGIN | app.js menyimpan email sebagai simulasi login di LocalStorage lalu mengarahkan ke index.html. -->
+      <form id="loginForm">
+        <label>Email<input id="loginEmail" type="email" placeholder="nama@gmail.com" required></label>
+        <label>Kata Sandi<input id="loginPassword" type="password" placeholder="Masukkan kata sandi" required></label>
+
+        <div class="login-row"><label><input type="checkbox" checked> Ingat saya</label><a href="#">Lupa kata sandi?</a>
+        </div>
+
+        <button class="btn primary full" type="submit">Masuk</button>
+        <span class="divider">atau masuk dengan</span>
+        <button class="google-button" type="button" data-info="Login Google disimulasikan untuk tugas front-end.">G
+          Masuk dengan Google</button>
+        <p class="register-note">Belum punya akun? <button type="button" id="registerDemo">Daftar</button></p>
+        <p class="form-message" id="authMessage"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="login-footer">© 2026 Explore Sumba Timur. Hak cipta dilindungi. <span>Syarat &
+      Ketentuan</span><span>Kebijakan Privasi</span></footer>
+  <!-- BAGIAN: FOOTER LOGIN | Informasi hak cipta dan kebijakan berada tepat di atas komentar ini. -->
+  <div class="toast" id="toast"></div>
+  <!-- URUTAN SCRIPT: data.js sebagai sumber data umum; app.js mengaktifkan submit login, daftar demo, dan toast. -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

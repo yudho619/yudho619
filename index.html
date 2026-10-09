@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<!-- BAGIAN: HEAD | Menyimpan metadata halaman, judul tab browser, dan menghubungkan seluruh tampilan ke css/styles.css. -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore Sumba Timur - Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+  <!-- BAGIAN: HEADER DAN NAVIGASI | Menu utama untuk berpindah halaman. Tombol data-favorite dan data-open-cart diproses oleh js/app.js. -->
+  <header class="site-header">
+    <a class="logo" href="index.html"><img src="assets/logo/logo_final.svg.svg" alt="Explore Sumba Timur"></a>
+    <nav class="main-nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="planner.html">Trip Planner</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-icons">
+      <button type="button" data-favorite aria-label="Favorit"></button>
+      <button type="button" data-open-cart aria-label="Rencana perjalanan"></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- BAGIAN: HERO | Memperkenalkan tujuan website. Form pencarian mengirim kata kunci ke explore.html melalui parameter q. -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <h1>Rancang perjalanan Sumba Timur dengan mudah.</h1>
+        <p>Temukan destinasi indah, paket wisata terbaik, transportasi, guide lokal, penginapan nyaman, kuliner khas, dan produk lokal autentik dalam satu platform terpercaya.</p>
+        <form class="search-box" action="explore.html">
+          <span class="search-icon"></span>
+          <input name="q" placeholder="Cari destinasi, paket wisata, penginapan...">
+        </form>
+        <div class="hero-actions">
+          <a class="btn primary" href="explore.html">Mulai Jelajah</a>
+          <a class="btn secondary" href="planner.html"><span class="small-icon calendar"></span>Buat Trip Planner</a>
+        </div>
+        <div class="trust-list">
+          <span><i class="ui-icon shield"></i>Aman &<br>Terpercaya</span>
+          <span><i class="ui-icon tag"></i>Harga<br>Terbaik</span>
+          <span><i class="ui-icon calendar"></i>Mudah &<br>Fleksibel</span>
+          <span><i class="ui-icon users"></i>Dukungan<br>Lokal</span>
+        </div>
+      </div>
+      <div class="hero-gallery">
+        <img src="assets/home/hero-1.jpg.jpg" alt="Bentang alam Sumba">
+        <img src="assets/home/hero-2.jpg.jpg" alt="Arsitektur budaya">
+        <img src="assets/home/hero-3.jpg.jpg" alt="Pantai tropis">
+        <img src="assets/home/hero-4.jpg.jpg" alt="Bukit saat senja">
+      </div>
+    </section>
+
+    <!-- BAGIAN: KATEGORI CEPAT | Setiap kartu mengarahkan pengguna ke halaman atau kategori layanan yang sesuai. -->
+    <section class="category-panel container">
+      <a href="explore.html"><i class="ui-icon pin active"></i><b>Destinasi</b></a>
+      <a href="planner.html"><i class="ui-icon bag"></i><b>Paket Wisata</b></a>
+      <a href="explore.html?cat=transportasi"><i class="ui-icon car"></i><b>Transportasi</b></a>
+      <a href="explore.html?cat=guide"><i class="ui-icon users"></i><b>Guide Lokal</b></a>
+      <a href="explore.html?cat=penginapan"><i class="ui-icon bed"></i><b>Penginapan</b></a>
+      <a href="explore.html?cat=kuliner"><i class="ui-icon food"></i><b>Kuliner</b></a>
+      <a href="explore.html?cat=produk"><i class="ui-icon shop"></i><b>Produk lokal</b></a>
+    </section>
+
+    <!-- BAGIAN: CARA KERJA | Menjelaskan alur penggunaan website dari mencari destinasi sampai konfirmasi booking. -->
+    <section class="container work-section">
+      <h2>Cara Kerja</h2>
+      <p>4 langkah mudah untuk merencanakan perjalanan Anda</p>
+      <div class="steps-card">
+        <article><b>1</b><i class="ui-icon search"></i><h3>Cari Destinasi</h3><p>Temukan destinasi wisata atau pengalaman terbaik yang Anda ingin jelajahi.</p></article>
+        <article><b>2</b><i class="ui-icon tag"></i><h3>Pilih Layanan</h3><p>Pilih layanan terbaik sesuai kebutuhan, mulai dari paket wisata hingga transportasi.</p></article>
+        <article><b>3</b><i class="ui-icon calendar"></i><h3>Atur Jadwal</h3><p>Tentukan tanggal perjalanan dan sesuaikan dengan rencana Anda.</p></article>
+        <article><b>4</b><i class="ui-icon check"></i><h3>Konfirmasi Booking</h3><p>Periksa detail, lakukan pembayaran, dan booking perjalanan Anda.</p></article>
+      </div>
+    </section>
+
+    <!-- BAGIAN: DESTINASI POPULER | data-render diisi fungsi renderCards() dari app.js memakai data homePopular dalam data.js. -->
+    <section class="container">
+      <div class="section-head"><h2>Populer Minggu Ini</h2><a href="explore.html">Lihat Semua ›</a></div>
+      <div class="card-grid five" data-render="home-popular"></div>
+    </section>
+
+    <!-- BAGIAN: KEUNGGULAN LAYANAN | Menampilkan alasan kepercayaan pengguna terhadap platform. -->
+    <section class="container service-strip" id="about">
+      <article><i class="ui-icon shield"></i><div><h3>Pilihan terverifikasi</h3><p>Semua layanan telah diverifikasi dan dipilih secara ketat.</p></div></article>
+      <article><i class="ui-icon headset"></i><div><h3>Dukungan 24/7</h3><p>Tim kami siap membantu Anda kapan pun dibutuhkan.</p></div></article>
+      <article><i class="ui-icon shield"></i><div><h3>Transaksi aman</h3><p>Pembayaran aman dengan sistem yang terpercaya</p></div></article>
+      <article><i class="ui-icon users"></i><div><h3>Dukungan lokal</h3><p>Kami bekerja sama dengan pelaku wisata Sumba Timur</p></div></article>
+    </section>
+
+    <!-- BAGIAN: INSPIRASI PERJALANAN | Konten editorial yang mengarahkan pengguna ke halaman Explore atau Detail. -->
+    <section class="container">
+      <div class="section-head"><h2>Inspirasi Perjalanan</h2><a href="explore.html">Lihat Semua ›</a></div>
+      <div class="inspiration-grid">
+        <article><img src="assets/home/insp-pantai.jpg.jpg" alt="Pantai"><span>Wisata alam</span><h3>Berenang di surga tersembunyi</h3><p>Nikmati keindahan pantai eksotis dan alam yang masih terjaga.</p><a href="explore.html">Jelajahi Sekarang ›</a></article>
+        <article><img src="assets/home/insp-budaya.jpg.jpg" alt="Budaya"><span>Budaya</span><h3>Menyelami Budaya Sumba</h3><p>Rasakan tradisi, upacara adat, dan kehidupan masyarakat lokal.</p><a href="detail.html">Jelajahi Sekarang ›</a></article>
+        <article><img src="assets/home/insp-sunset.jpg" alt="Sunset"><span>Sunset</span><h3>Pesona Senja Sumba Timur</h3><p>Temukan tempat terbaik untuk menikmati senja yang tak terlupakan.</p><a href="explore.html">Jelajahi Sekarang ›</a></article>
+      </div>
+    </section>
+  </main>
+
+  <!-- BAGIAN: KOMPONEN DINAMIS GLOBAL | Cart, footer, dan toast diisi atau dikendalikan oleh app.js. -->
+  <aside class="cart-drawer" id="cartDrawer"></aside>
+  <footer class="site-footer" id="footer"></footer>
+  <div class="toast" id="toast"></div>
+  <!-- URUTAN SCRIPT: data.js harus lebih dahulu karena app.js menggunakan data destinasi dan produk dari file tersebut. -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

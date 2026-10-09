@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="id">
+<!-- BAGIAN: HEAD | Menghubungkan halaman marketplace dengan stylesheet utama. -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore Marketplace</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="explore">
+  <!-- BAGIAN: HEADER DAN NAVIGASI | Explore diberi class active karena pengguna sedang berada di halaman marketplace. -->
+  <header class="site-header">
+    <a class="logo" href="index.html"><img src="assets/logo/logo_final.svg.svg" alt="Explore Sumba Timur"></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a class="active" href="explore.html">Explore</a>
+      <a href="planner.html">Trip Planner</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-icons"><button type="button" data-favorite aria-label="Favorit"></button><button type="button" data-open-cart aria-label="Rencana perjalanan"></button></div>
+  </header>
+
+  <!-- BAGIAN: MARKETPLACE | Wadah pencarian, sorting, filter, dan daftar card yang dirender oleh app.js. -->
+  <main class="container marketplace">
+    <!-- BAGIAN: ALAT PENCARIAN | ID marketSearch, sortSelect, smartFilter, dan categoryTabs dibaca oleh JavaScript. -->
+    <section class="market-intro">
+      <h1>Explore Marketplace</h1>
+      <p>Temukan destinasi indah, paket wisata, transportasi, guide lokal, penginapan, kuliner khas, dan produk lokal autentik di Sumba Timur.</p>
+      <div class="market-tools">
+        <label class="search-box market-search"><span class="search-icon"></span><input id="marketSearch" placeholder="Cari destinasi, paket wisata, transportasi, atau penginapan..."></label>
+        <button class="tool-button" id="smartFilter"><i class="ui-icon sliders"></i>Filter Cerdas</button>
+        <select id="sortSelect"><option value="popular">Urutkan : Terpopuler</option><option value="low">Harga Termurah</option><option value="high">Harga Tertinggi</option></select>
+        <button class="view-button active" type="button" aria-label="Tampilan grid">▦</button><button class="view-button" type="button" aria-label="Tampilan daftar">☷</button>
+      </div>
+      <div class="tabs" id="categoryTabs"></div>
+    </section>
+
+    <!-- BAGIAN: FILTER DAN HASIL | Filter berada di kiri; data-render="market" menjadi tempat card hasil JavaScript. -->
+    <section class="market-layout">
+      <aside class="filter-panel">
+        <h2>Filter Cerdas</h2>
+        <h3>Kategori</h3>
+        <label><input type="checkbox" checked>Semua</label>
+        <label><input type="checkbox">Destinasi</label>
+        <label><input type="checkbox">Paket wisata</label>
+        <label><input type="checkbox">Penginapan</label>
+        <label><input type="checkbox">Transportasi</label>
+        <label><input type="checkbox">Guide Lokal</label>
+        <label><input type="checkbox">Kuliner</label>
+        <label><input type="checkbox">Produk Lokal</label>
+        <hr>
+        <h3>Budget <span>(per orang)</span></h3>
+        <label><input type="radio" name="budget" checked>Rp0 - Rp250.000</label>
+        <label><input type="radio" name="budget">Rp250.000 - Rp750.000</label>
+        <label><input type="radio" name="budget">Rp750.000 - Rp1.500.000</label>
+        <label><input type="radio" name="budget">Rp1.500.000+</label>
+        <button class="reset-button" id="resetFilter">Reset Filter</button>
+      </aside>
+      <section>
+        <div class="result-row"><b id="resultCount">Menampilkan pengalaman terbaik</b><span>Tampilkan: <button type="button">12 per halaman</button></span></div>
+        <div class="card-grid three" data-render="market"></div>
+      </section>
+    </section>
+  </main>
+
+  <!-- BAGIAN: KOMPONEN GLOBAL | Drawer Trip Plan, footer, dan toast dipakai bersama oleh beberapa halaman. -->
+  <aside class="cart-drawer" id="cartDrawer"></aside>
+  <footer class="site-footer" id="footer"></footer>
+  <div class="toast" id="toast"></div>
+  <!-- URUTAN SCRIPT: data.js menyediakan data; app.js membuat card, filter, favorit, dan cart. -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
